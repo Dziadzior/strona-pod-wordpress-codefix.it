@@ -1,0 +1,177 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html {
+	font-size: 1rem;
+}
+
+body {
+	height: 100svh;
+	background: url(assets/images/tlo.jpg) no-repeat center center/cover;
+	overflow: hidden;
+}
+
+header {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	padding: 30px 50px;
+	color: #b17300;
+	background: rgba(204, 204, 204, 0.37);
+	border-bottom: 1px solid #b17300;
+	box-shadow: 0 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+	font-size: 25px;
+	font-weight: 700;
+	color: whitesmoke;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+header .logo span {
+	color: #b17300;
+	text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .nawigacja {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+
+header .nawigacja a {
+	margin: 0 0.5rem;
+	padding: 0.7rem 1.2rem;
+	font-size: 1rem;
+	font-weight: 600;
+	color: whitesmoke;
+	border-radius: 15px;
+	text-decoration: none;
+}
+
+header .nawigacja a:hover {
+	transform: translateY(-10%);
+	transition: 0.5s;
+}
+
+header .nawigacja a:hover,
+.aktywny {
+	background: #b17300;
+	transition: 0.5s;
+}
+
+header .przycisk {
+	display: none;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100svh;
+}
+
+section h2 {
+	color: whitesmoke;
+	font-size: 10rem;
+	text-align: center;
+	letter-spacing: 1rem;
+	text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsywność */
+@media (max-width: 990px) {
+	html {
+		font-size: 75%;
+	}
+
+	header {
+		padding: 1rem 2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	header .logo {
+		font-size: 30px;
+		font-weight: 600;
+	}
+
+	header .nawigacja {
+		position: fixed;
+		flex-direction: column;
+		justify-content: start;
+		align-items: flex-start;
+		top: 0;
+		right: -100%;
+		padding-top: 10rem;
+		min-width: 300px;
+		height: 100svh;
+		text-align: center;
+		background: #b173005e;
+		transition: 0.8s;
+		backdrop-filter: blur(10px);
+	}
+
+	header .nawigacja.aktywny2 {
+		right: 0;
+		transition: 0.6s;
+		backdrop-filter: blur(10px);
+	}
+
+	header .nawigacja a {
+		display: block;
+		margin: 0.5rem 15px;
+		font-size: 1.5rem;
+	}
+
+	header .nawigacja a:hover,
+	.aktywny {
+		background: #b17300;
+		color: whitesmoke;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		transition: 0.5s;
+	}
+
+	header .nawigacja a:hover,
+	.aktywny2 {
+		background: whitesmoke;
+		color: #b17300;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+		transition: 0.5s;
+	}
+
+	header .przycisk {
+		display: block;
+	}
+
+	header .nawigacja .zamknij-przycisk {
+		position: absolute;
+		margin: 25px;
+		top: -1.5%;
+		right: 0;
+		font-size: 3rem;
+		text-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
+	}
+
+	section h2 {
+		padding: 2rem;
+		font-size: 4rem;
+		text-align: center;
+		letter-spacing: 1rem;
+	}
+}
